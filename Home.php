@@ -4,7 +4,7 @@
     <?php include("Header.php"); ?>
   </header>
   <main>
-hola
+
   </main>
   <footer>
     <!-- place footer here -->
