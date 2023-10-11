@@ -1,0 +1,107 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-10-2023 a las 00:13:40
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.0.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `variedades_vicar`
+--
+CREATE DATABASE IF NOT EXISTS `variedades_vicar` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `variedades_vicar`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `balance`
+--
+
+DROP TABLE IF EXISTS `balance`;
+CREATE TABLE `balance` (
+  `bId` int(20) NOT NULL,
+  `bDate` date NOT NULL,
+  `bValor` int(20) NOT NULL,
+  `bObservacion` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `balance`
+--
+
+INSERT INTO `balance` (`bId`, `bDate`, `bValor`, `bObservacion`) VALUES
+(2, '2023-10-04', 100000, ''),
+(3, '2023-10-05', 50000, ''),
+(4, '2023-10-05', 50000, ''),
+(6, '2023-10-06', -5000, ''),
+(24, '2023-10-08', 5000, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materiales`
+--
+
+DROP TABLE IF EXISTS `materiales`;
+CREATE TABLE `materiales` (
+  `mId` int(40) NOT NULL,
+  `mCategoria` varchar(100) NOT NULL,
+  `mNombre` varchar(500) NOT NULL,
+  `mDescripcion` varchar(500) NOT NULL,
+  `mPorMayor` mediumint(9) NOT NULL,
+  `mDisponible` tinyint(4) NOT NULL,
+  `mValor` mediumint(9) NOT NULL,
+  `mUnion` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `materiales`
+--
+
+INSERT INTO `materiales` (`mId`, `mCategoria`, `mNombre`, `mDescripcion`, `mPorMayor`, `mDisponible`, `mValor`, `mUnion`) VALUES
+(39, 'Papeleria', 'Cuaderno', '50 - Cuadriculado', 2000, 10, 3000, 'PapeleriaCuaderno50 - Cuadriculado'),
+(40, 'Papeleria', 'Cuaderno', '50 - Cuadriculado - Sticker', 3000, 10, 4000, 'PapeleriaCuaderno50 - Cuadriculado - Sticker'),
+(41, 'Papeleria', 'Cuaderno', '50 - Rayado', 2000, 10, 3000, 'PapeleriaCuaderno50 - Rayado'),
+(42, 'Papeleria', 'Cuaderno', '50 - Rayado - Sticker', 3000, 10, 4000, 'PapeleriaCuaderno50 - Rayado - Sticker'),
+(44, 'Variedades', 'Crema corporal', 'de natura', 20000, 1, 30000, 'VariedadesCrema corporalde natura'),
+(45, 'Electronico', 'Audifonos', '', 0, 0, 0, 'ElectronicoAudifonos'),
+(46, 'Variedades', 'Martillo', 'De madera', 5000, 5, 8000, 'VariedadesMartilloDe madera');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `balance`
+--
+ALTER TABLE `balance`
+  ADD PRIMARY KEY (`bId`);
+
+--
+-- Indices de la tabla `materiales`
+--
+ALTER TABLE `materiales`
+  ADD PRIMARY KEY (`mId`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `balance`
+--
+ALTER TABLE `balance`
+  MODIFY `bId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT de la tabla `materiales`
+--
+ALTER TABLE `materiales`
+  MODIFY `mId` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+COMMIT;

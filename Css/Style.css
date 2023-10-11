@@ -1,0 +1,17 @@
+
+body{
+    background-color: skyblue;
+}
+
+.tbl-fixed {
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+.tbl-fixedd {
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+table th{
+    position: sticky;
+    top: 0px;
+}
